@@ -129,6 +129,10 @@ def clean_rule(file_dict,rules):
     time_decay = rules.timeDecay
     ret_file_dict = file_dict
     if time_decay:
+        td = {}
+        for i in time_decay:
+          td={**td,**i}
+        time_decay=td
         ret_file_dict = TimeDecay.time_decay(file_dict.keys(), time_decay, None, '%Y%m%d%H%M%S')
     elif rules.retention:
         keys = list(file_dict.keys())
