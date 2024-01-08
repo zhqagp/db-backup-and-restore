@@ -57,7 +57,7 @@ class TimeDecay(object):
                        "months": 6,
                        "years": 10}
         td = {}
-        for i in time_decay:
+        for i in options:
 	      td={**td,**i}
         options=td 
         _ret_temp = {}  # (str_date,datetime),(str,list)
